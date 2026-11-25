@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Qreator.Cli/Qreator.Cli.csproj" />
+  <Project Path="Qreator.Core/Qreator.Core.csproj" />
+</Solution>
