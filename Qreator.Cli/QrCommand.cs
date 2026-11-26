@@ -4,7 +4,7 @@ namespace Qreator.Cli;
 
 internal static class QrCommand
 {
-    private const string Usage = "Usage: qreator <text> [-o <file.svg>] [--size <pixels>] [--error-correction L|M|Q|H] [--color <color>] [--background <color>] [--finder-color <color>] [--codeword-color <color>]";
+    private const string Usage = "Usage: qreator <text> [-o <file.svg>] [--size <pixels>] [--error-correction L|M|Q|H] [--style square|dot|smooth] [--color <color>] [--background <color>] [--finder-color <color>] [--codeword-color <color>]";
 
     internal static int Run(string[] arguments, TextWriter output, TextWriter error)
     {

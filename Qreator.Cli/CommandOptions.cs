@@ -1,5 +1,6 @@
 using Qreator.Core.Models;
 using Qreator.Core.Svg;
+using Qreator.Core.Svg.Styles;
 
 namespace Qreator.Cli;
 
@@ -32,6 +33,15 @@ internal sealed record CommandOptions(string Input, string? OutputPath, SvgOptio
                     if (!Enum.TryParse<ErrorCorrectionLevel>(ReadValue(), true, out var level) || !Enum.IsDefined(level))
                         throw new ArgumentException("Error correction must be L, M, Q, or H.");
                     options.QrOptions = new QrOptions { ErrorCorrection = level };
+                    break;
+                case "--style":
+                    options.ModuleStyle = ReadValue().ToLowerInvariant() switch
+                    {
+                        "square" => null,
+                        "dot" => ModuleStyles.Dot,
+                        "smooth" => ModuleStyles.Smooth,
+                        _ => throw new ArgumentException("Style must be square, dot, or smooth.")
+                    };
                     break;
                 case "--color":
                     options.Color = ReadValue();
