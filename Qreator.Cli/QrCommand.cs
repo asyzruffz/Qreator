@@ -17,7 +17,7 @@ internal static class QrCommand
             }
 
             CommandOptions command = CommandOptions.Parse(arguments);
-            string svg = QrSvg.GenerateQr(command.Input, command.SvgOptions);
+            string svg = QrGenerator.GenerateQr(command.Input, command.SvgOptions);
 
             if (command.OutputPath is null)
                 output.WriteLine(svg);

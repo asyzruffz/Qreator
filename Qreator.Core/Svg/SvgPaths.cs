@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Qreator.Core.Rendering;
+namespace Qreator.Core.Svg;
 
 public sealed class SvgPaths
 {

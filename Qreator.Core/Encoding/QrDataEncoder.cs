@@ -1,5 +1,4 @@
 using Qreator.Core.Models;
-using System.Text;
 
 namespace Qreator.Core.Encoding;
 
@@ -15,7 +14,7 @@ internal static class QrDataEncoder
         foreach (Segment segment in segments)
         {
             writer.Write(segment.Mode switch { Mode.Numeric => 1, Mode.AlphaNumeric => 2, _ => 4 }, 4);
-            int characterCount = segment.Mode == Mode.Byte ? Encoding.UTF8.GetByteCount(segment.Value) : segment.Value.Length;
+            int characterCount = segment.Mode == Mode.Byte ? System.Text.Encoding.UTF8.GetByteCount(segment.Value) : segment.Value.Length;
             writer.Write(characterCount, QrEncodingConstants.CharacterCountBits[(int)segment.Mode][versionRange]);
             WriteSegment(writer, segment);
         }
@@ -52,7 +51,7 @@ internal static class QrDataEncoder
         }
         else
         {
-            foreach (byte value in Encoding.UTF8.GetBytes(segment.Value))
+            foreach (byte value in System.Text.Encoding.UTF8.GetBytes(segment.Value))
                 writer.Write(value, 8);
         }
     }

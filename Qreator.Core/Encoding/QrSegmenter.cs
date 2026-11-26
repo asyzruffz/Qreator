@@ -26,7 +26,7 @@ internal static class QrSegmenter
     {
         Mode.Numeric => segment.Value.Length / 3 * 10 + (segment.Value.Length % 3 == 0 ? 0 : segment.Value.Length % 3 * 3 + 1),
         Mode.AlphaNumeric => segment.Value.Length / 2 * 11 + segment.Value.Length % 2 * 6,
-        _ => Encoding.UTF8.GetByteCount(segment.Value) * 8
+        _ => System.Text.Encoding.UTF8.GetByteCount(segment.Value) * 8
     };
 
     internal static List<Segment> Optimize(List<Segment> basicSegments, int versionRange)

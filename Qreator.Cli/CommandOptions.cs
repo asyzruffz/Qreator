@@ -1,5 +1,5 @@
 using Qreator.Core.Models;
-using Qreator.Core.Rendering;
+using Qreator.Core.Svg;
 
 namespace Qreator.Cli;
 
