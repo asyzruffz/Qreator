@@ -1,6 +1,6 @@
 # Qreator
 
-Generate QR code grids and SVGs with .NET 10.
+Generate QR code grids in SVGs with .NET 10.
 
 ```powershell
 Qreator "https://example.com" -o qr.svg
