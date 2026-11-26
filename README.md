@@ -3,7 +3,7 @@
 Generate QR code grids and SVGs with .NET 10.
 
 ```powershell
-dotnet run --project Qreator.Cli -- "https://example.com" -o qr.svg
+Qreator "https://example.com" -o qr.svg
 ```
 
 Use `--help` for size, error correction, style, and color options. Use `--style dot` or `--style smooth` to change module shapes (the default is `square`). Without `-o`, the SVG is written to standard output. The reference defaults are a black background and white modules; use `--background white --color black` for the usual dark-on-light appearance.
